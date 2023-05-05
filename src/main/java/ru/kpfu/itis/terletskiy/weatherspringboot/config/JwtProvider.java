@@ -1,4 +1,4 @@
-package ru.kpfu.itis.terletskiy.weatherspringboot.filter;
+package ru.kpfu.itis.terletskiy.weatherspringboot.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -21,6 +21,8 @@ import java.util.Date;
 
 @Component
 public class JwtProvider {
+
+    // Генерирует и валидирует access и refresh токены
 
     private final SecretKey jwtAccessSecret;
     private final SecretKey jwtRefreshSecret;

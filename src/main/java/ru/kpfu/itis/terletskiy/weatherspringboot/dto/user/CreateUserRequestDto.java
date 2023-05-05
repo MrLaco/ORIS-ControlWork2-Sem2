@@ -1,4 +1,4 @@
-package ru.kpfu.itis.terletskiy.weatherspringboot.dto;
+package ru.kpfu.itis.terletskiy.weatherspringboot.dto.user;
 
 import lombok.*;
 

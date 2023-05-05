@@ -6,14 +6,10 @@ import org.springframework.boot.autoconfigure.domain.*;
 import org.springframework.context.annotation.*;
 import org.springframework.data.jpa.repository.config.*;
 
-@SpringBootApplication(scanBasePackages = {
-        "ru.kpfu.itis.terletskiy.weatherspringboot.model",
-        "ru.kpfu.itis.terletskiy.weatherspringboot.repository"})
-@EnableJpaRepositories(basePackages = "ru.kpfu.itis.terletskiy.weatherspringboot.model")
+@SpringBootApplication
 public class WeatherSpringbootApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(WeatherSpringbootApplication.class, args);
     }
-
 }

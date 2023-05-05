@@ -1,9 +1,7 @@
-POST http://localhost:8081/api/auth/sign_up
+GET http://localhost:8081/api/weather/get?cityName=Kazan
 Content-Type: application/json
 
 
 {
-  "name": "marat",
-  "email": "danis@gmail.com",
-  "password": "assafasf"
+  "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYW5pc0BnbWFpbC5jb20iLCJleHAiOjE2ODMyOTU1NDAsInJvbGVzIjpbIlVTRVIiXSwiZmlyc3ROYW1lIjoibWFyYXQifQ.pviSPuBfbz2j26Lx_HItCW9oBILBfkSNRSDjpMvpcRQ"
 }

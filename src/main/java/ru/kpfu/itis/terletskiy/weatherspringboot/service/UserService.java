@@ -1,4 +1,8 @@
 package ru.kpfu.itis.terletskiy.weatherspringboot.service;
 
-public class UserService {
+import ru.kpfu.itis.terletskiy.weatherspringboot.dto.user.*;
+
+public interface UserService {
+
+    CreateUserResponseDto createUser(CreateUserRequestDto createUserRequestDto);
 }

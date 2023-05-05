@@ -2,10 +2,9 @@ package ru.kpfu.itis.terletskiy.weatherspringboot.controller;
 
 import javax.security.auth.message.*;
 import lombok.*;
-import org.apache.coyote.*;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
-import ru.kpfu.itis.terletskiy.weatherspringboot.dto.*;
+import ru.kpfu.itis.terletskiy.weatherspringboot.dto.jwt.*;
 import ru.kpfu.itis.terletskiy.weatherspringboot.service.*;
 
 @RestController
@@ -31,11 +30,5 @@ public class AuthController {
     public ResponseEntity<JwtResponse> getNewRefreshToken(@RequestBody RefreshJwtRequest request) throws AuthException {
         final JwtResponse token = authService.refresh(request.getRefreshToken());
         return ResponseEntity.ok(token);
-    }
-
-    @PostMapping("sign_up")
-    public ResponseEntity<CreateUserResponseDto> registerUser(@RequestBody CreateUserRequestDto user) {
-        CreateUserResponseDto responseDto = authService.registerUser(user);
-        return ResponseEntity.ok(responseDto);
     }
 }

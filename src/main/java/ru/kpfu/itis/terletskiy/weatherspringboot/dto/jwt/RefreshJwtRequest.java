@@ -1,4 +1,4 @@
-package ru.kpfu.itis.terletskiy.weatherspringboot.dto;
+package ru.kpfu.itis.terletskiy.weatherspringboot.dto.jwt;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,5 +9,4 @@ import lombok.Setter;
 public class RefreshJwtRequest {
 
     public String refreshToken;
-
 }

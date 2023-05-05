@@ -6,7 +6,8 @@ import lombok.*;
 import org.springframework.security.core.context.*;
 import org.springframework.security.crypto.bcrypt.*;
 import org.springframework.stereotype.*;
-import ru.kpfu.itis.terletskiy.weatherspringboot.dto.*;
+import ru.kpfu.itis.terletskiy.weatherspringboot.config.*;
+import ru.kpfu.itis.terletskiy.weatherspringboot.dto.jwt.*;
 import ru.kpfu.itis.terletskiy.weatherspringboot.filter.*;
 import ru.kpfu.itis.terletskiy.weatherspringboot.model.*;
 import ru.kpfu.itis.terletskiy.weatherspringboot.repository.*;
@@ -70,21 +71,5 @@ public class AuthService {
 
     public JwtAuthentication getAuthInfo() {
         return (JwtAuthentication) SecurityContextHolder.getContext().getAuthentication();
-    }
-
-    public CreateUserResponseDto registerUser(CreateUserRequestDto createUserRequestDto) {
-        Set<Role> roles = new HashSet<>();
-        roles.add(Role.USER);
-
-        User user = User.builder()
-                .email(createUserRequestDto.getEmail())
-                .name(createUserRequestDto.getName())
-                .password(encoder.encode(createUserRequestDto.getPassword()))
-                .roles(roles)
-                .build();
-
-        userRepository.save(user);
-
-        return CreateUserResponseDto.fromUser(user);
     }
 }
